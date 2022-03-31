@@ -52,7 +52,7 @@ public class DefaultCalculatorTest {
     @Order(4)
     @Test
     @DisplayName("Check multiplication method")
-    final void defaultCalculatorMultiplicationn(){
+    final void defaultCalculatorMultiplication(){
         Calculator calculator = new DefaultCalculator();
         long a = 10;
         long b = 20;
@@ -60,5 +60,47 @@ public class DefaultCalculatorTest {
         long result = calculator.multiplicate(a,b);
         assertEquals(product,result);
     }
-
+    @Order(5)
+    @Test
+    @DisplayName("Check division method")
+    final void defaultCalculatorDivision(){
+        Calculator calculator = new DefaultCalculator();
+        long a = 10;
+        long b = 100;
+        long quotient = a/b;
+        double result = calculator.divide(a,b);
+        assertEquals(quotient,result);
+    }
+    @Order(6)
+    @Test
+    @DisplayName("Check sum method")
+    final void defaultCalculatorSum(){
+        Calculator calculator = new DefaultCalculator();
+        long sum=0;
+        long[] arr = new long[3];
+        arr[0] = 10;
+        arr[1] = 33;
+        arr[2] = -4;
+        for(long elem: arr){
+            sum =+elem;
+        }
+        long result = calculator.sum(arr);
+        assertEquals(sum,result);
+    }
+    @Order(7)
+    @Test
+    @DisplayName("Check product method")
+    final void defaultCalculatorProduct(){
+        Calculator calculator = new DefaultCalculator();
+        long product =1;
+        long[] arr = new long[3];
+        arr[0] = 10;
+        arr[1] = 33;
+        arr[2] = -4;
+        for(long elem: arr){
+            product =product*elem;
+        }
+        long result = calculator.product(arr);
+        assertEquals(product,result);
+    }
 }
